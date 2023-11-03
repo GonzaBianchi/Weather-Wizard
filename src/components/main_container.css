@@ -1,0 +1,197 @@
+:root {
+    --color-background: #D7EEF2; /* Fondo principal de la aplicación, puede representar un cielo despejado o un fondo general. */
+    --color-card-background: #EAF6F8; /* Fondo de las tarjetas que muestran información detallada del clima. */
+    --color-text: #2A2A2A; /* Color principal de texto, legible y adecuado para información. */
+    --color-highlight: #B0DEE5; /* Para resaltar elementos, como botones o detalles importantes. */
+    --color-divider: #FDFEFE; /* Líneas divisoras o bordes que separan secciones de la interfaz. */
+    --color-accent: #000000; /* Para elementos de alto contraste, como iconos o texto destacado. */
+    --color-ul: #2c2c2c;
+}
+
+.main_container{
+    width: 70%;
+    height: 100%;
+}
+
+.main_container, .main_container-form{
+    flex-direction: column;
+}
+
+.main_container-form{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 60%;
+    height: 30%;
+}
+
+.main_container_form-inputs{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.main_container_form-inputs-1, .main_container_form-inputs-2{
+    position: relative;
+}
+
+label{
+    position: absolute;
+    /* left: 5px;
+    top: 8px; */
+}
+
+.main_container_form_inputs-country, .main_container_form_inputs-city{
+    border-bottom: 1px solid ;
+    /* outline: 1px solid; */
+    padding: 2px 2px 2px 5px;
+    height: 2em;
+    font-size: 1em;
+    width: 80%;
+    background-color: transparent;
+    color: var(--color-divider);
+}
+
+.main_container_form_inputs-country:focus, .main_container_form_inputs-city:focus{
+    outline: none;
+    border: 1px solid #ccc;
+    /* border-color: #000; */
+    transition: border .5s ease;
+    border-radius: .6em;
+}
+
+.main_container_form_inputs-country:not(:placeholder-shown), .main_container_form_inputs-city:not(:placeholder-shown){
+    border: 1px solid #ccc;
+    border-radius: .6em;
+}
+
+.main_container_form_inputs-country:not(:valid) ~ label, .main_container_form_inputs-country:not(:focus) ~ label, 
+.main_container_form_inputs-city:not(:valid) ~ label, .main_container_form_inputs-city:not(:focus) ~ label{
+    left: 3px;
+    top: 16px;
+    transition: all .5s ease;
+}
+
+.main_container_form_inputs-country:focus ~ label, .main_container_form_inputs-city:focus ~ label, .main_container_form_inputs-city:valid ~ label,
+.main_container_form_inputs-country:not(:placeholder-shown) ~ label, .main_container_form_inputs-city:not(:placeholder-shown) ~ label{
+    top: -10px;
+    left: 9px;
+    /* font-size: 1em; */
+    z-index: 1;
+    /* background-color: white; */
+    margin: 0;
+    /* outline: 1px; */
+    transition: all 200ms ease;
+    color: #ccc;
+    font-size: .8em;
+    background-color: #333636;
+    /* letter-spacing: 2px; */
+}
+
+.main_container_form_inputs-ul{
+    position: absolute;
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-ul);
+    max-height: 19.375em;
+    /* min-width: 184px; */
+    /* width: auto; */
+    width: 90%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: .3em;
+    z-index: 1100;
+    border-bottom-left-radius: .6em;
+    border-bottom-right-radius: .6em;
+}
+
+.main_container_form_inputs-ul li{
+    list-style: none;
+    margin: .3em 0;
+    border: 1px 0 1px 0;
+    border-top: 1px;
+    border-bottom: 1px;
+    border-color: #ccc;
+    border-style: solid;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.main_container_form_inputs-ul li:hover{
+    background-color: #a1a1a1;
+    transition: all .5s ease;
+}
+
+.main_container_form-button{
+    cursor: pointer;
+    padding: .6em;
+    font-size: .9em;
+    border: 1px solid var(--color-divider);
+    border-radius: .6em;
+    background-color: transparent;
+    transition: all .5s ease;
+    color: var(--color-divider);
+}
+
+.main_container_form-button:hover, .main_container_form-button:focus, .main_container_form-button:active{
+    background-color: var(--color-ul);
+    color: #f5f5f5;
+    transition: all .5s ease;
+}
+
+@media screen and (min-width: 1920px){
+    
+    .main_container img{
+        width: 30%;
+    }
+
+    .main_container-form{
+        font-size: 1.6em;
+    }
+
+    .main_container_form_inputs-country:focus ~ label, .main_container_form_inputs-city:focus ~ label, .main_container_form_inputs-city:valid ~ label, .main_container_form_inputs-country:not(:placeholder-shown) ~ label, .main_container_form_inputs-city:not(:placeholder-shown) ~ label {
+        top: -15px;
+        left: 15px;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .main_container{
+        height: 15% !important;
+        width: 95% !important;
+        flex-direction: column !important; 
+        justify-content: space-around !important;
+    }
+    
+    .main_container-form{
+        height: 40% !important;
+        width: 80% !important;
+        justify-content: space-around !important;
+    }
+
+    .main_container img{
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width: 575px) and (orientation: landscape){
+    .main_container-form{
+        width: 45%;
+    }
+    .main_container img{
+        width: 40%;
+    }
+    .main_container{
+        height: 10%;
+    }
+}
+
+@media only screen and (max-height: 415px) and (orientation: landscape){
+    .main_container{
+        height: 18% !important;
+    }
+}

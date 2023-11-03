@@ -1,0 +1,451 @@
+:root {
+    --color-background: #D7EEF2; /* Fondo principal de la aplicación, puede representar un cielo despejado o un fondo general. */
+    --color-card-background: #EAF6F8; /* Fondo de las tarjetas que muestran información detallada del clima. */
+    --color-text: #2A2A2A; /* Color principal de texto, legible y adecuado para información. */
+    --color-highlight: #B0DEE5; /* Para resaltar elementos, como botones o detalles importantes. */
+    --color-divider: #FDFEFE; /* Líneas divisoras o bordes que separan secciones de la interfaz. */
+    --color-accent: #000000; /* Para elementos de alto contraste, como iconos o texto destacado. */
+  }
+
+.weather_map_container{
+    display: none;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 85%;
+    width: 100%;
+    outline: none;
+}
+
+.weather_container, .map_container{
+    width: 45%;
+    height: 90%;
+    border-radius: .6em;
+}
+
+.weather_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    /* padding: .8em; */
+    background-color: transparent;
+    box-shadow: 0px 5px 15px 5px #ffffff10;
+}
+
+.map_container{
+    outline: none;
+}
+
+.city_country_name{
+    width: calc(100% - 1.6em);
+    text-align: center;
+    font-size: 2em;
+    font-weight: 600;
+}
+
+.main_temp_container{
+    display: flex;
+    /* width: calc(100% - 1.6em); */
+    height: 50%;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.temp_container{
+    display: flex;
+    justify-content: space-evenly;
+    width: 60%;
+    height: 100%;
+}
+
+.img_temp_container{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img_temp{
+    object-fit: contain;
+    scale: 1.2;
+    filter: saturate(2);
+}
+
+.actual_temp_sensation_container{
+    width:55%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.actual_temp_container, .actual_sensation_container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.actual_temp_container{
+    height: 55%;
+}
+
+.actual_sensation_container{
+    height: 45%;
+}
+
+.actual_temp{
+    font-size: 4em;
+    margin-top: .2em;
+}
+
+.actual_sensation{
+    font-size: 3em;
+    margin-top: .2em;
+}
+
+.min_max_temp_container{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.min_temp_container, .max_temp_container{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.min_temp, .max_temp{
+    font-size: 3em;
+    margin-top: .3em;
+}
+
+.secundary_wheater_container{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.humidity_container{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.humidity{
+    font-size: 3em;
+    margin-top: .3em;
+}
+
+.sunrise_sunset_container{
+    width: 55%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.sunrise_container, .sunset_container{
+    display: flex;
+    width: 50%;
+    height: 50%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sunrise, .sunset{
+    font-size: 2.8em;
+    margin-top: .3em;
+}
+
+.actual_temp_label, .actual_sensation_label, .min_temp_label, .max_temp_label, .humidity_label, .sunrise_label, .sunset_label{
+    font-size: .9em;
+    font-weight: 400;
+    border-bottom: 1px solid #000;
+}
+
+.option{
+    outline: 1px solid #f5f5f5;
+}
+
+.actual_option{
+    text-shadow: 0px 2px 5px #f5f5f5;
+    letter-spacing: 1px;
+    transition: all .5s ease;
+}
+
+@media only screen and (min-width: 1920px){
+    .city_country_name{
+        font-size: 2.5em;
+    }
+    .img_temp{
+        scale: 2;
+    }
+    .actual_temp_label{
+        font-size: 1.8em;
+    }
+    .actual_sensation_label{
+        font-size: 1.5em;
+    }
+    .actual_temp{
+        font-size: 7em;
+    }
+    .actual_sensation{
+        font-size: 4em;
+    }
+    .min_max_temp_container{
+        width: 30%;
+    }
+    .min_temp_label, .max_temp_label{
+        font-size: 1.5em;
+    }
+    .min_temp, .max_temp{
+        font-size: 4.2em;
+    }
+    .humidity_label, .sunrise_label, .sunset_label{
+        font-size: 1.8em;
+    }
+    .sunrise, .sunset, .humidity {
+        font-size: 4em;
+    }
+}
+
+@media only screen and (max-width: 1282px){
+    .min_temp_label, .max_temp_label{
+        font-size: 0.7em;
+    }
+}
+
+@media only screen and (max-width: 1024px) and (orientation: portrait){
+    .min_temp_label, .max_temp_label{
+        font-size: 0.7em;
+    }
+    .sunrise, .sunset, .humidity {
+        font-size: 2.3em;
+    }
+
+}
+
+@media only screen and (max-width: 768px){
+    .weather_map_container{
+        flex-direction: column;
+        height: 80%;
+    }
+
+    .weather_container, .map_container{
+        width: 95%;
+        height: 70%;
+    }
+
+    .bar_container{
+        width: 95%;
+        height: 5%;
+        /* outline: 1px solid white; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bar_content-data, .bar_content-map{
+        width: 50%;
+        text-align: center;
+        align-self: center;
+        cursor: pointer;
+    }
+    
+    .opcionOculta{
+        display: none !important;
+    }
+
+    .opcionMostrada{
+        display: flex !important;
+    }
+
+
+    .city_country_name{
+        font-size: 1.5em;
+    }
+    .img_temp{
+        scale: 1;
+    }
+    .actual_temp_label{
+        font-size: .8em;
+    }
+    .actual_sensation_label{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        font-size: .8em;
+    }
+    .actual_temp{
+        font-size: 2.5em;
+    }
+    .actual_sensation{
+        font-size: 1.5em;
+    }
+    /* .min_max_temp_container{
+        width: 30%;
+    } */
+    .min_temp_label, .max_temp_label{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        font-size: .8em;
+    }
+    .min_temp, .max_temp{
+        font-size: 1.5em;
+    }
+    .humidity_label, .sunrise_label, .sunset_label{
+        font-size: 1em;
+    }
+    .sunrise, .sunset, .humidity {
+        font-size: 1.5em;
+    }
+
+}
+
+@media only screen and (max-width: 1023px) and (orientation: landscape){
+    .weather_map_container{
+        flex-direction: column;
+    }
+    .bar_container{
+        width: 95%;
+        height: 5%;
+        /* outline: 1px solid white; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bar_content-data, .bar_content-map{
+        width: 50%;
+        text-align: center;
+        align-self: center;
+        cursor: pointer;
+        padding: .4em;
+    }
+    
+    .opcionOculta{
+        display: none !important;
+    }
+
+    .opcionMostrada{
+        display: flex !important;
+    }
+
+
+    .weather_container{
+        width: 70%;
+    }
+
+    .map_container{
+        width: 95%;
+    }
+}
+
+@media only screen and (min-width: 1024px) and (orientation: landscape){
+    .bar_container{
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 768px) and (orientation: portrait){
+    .weather_map_container{
+        flex-direction: column;
+    }
+
+    .bar_container{
+        width: 95%;
+        height: 5%;
+        /* outline: 1px solid white; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bar_content-data, .bar_content-map{
+        width: 50%;
+        text-align: center;
+        align-self: center;
+        cursor: pointer;
+        padding: .4em;
+    }
+    
+    .opcionOculta{
+        display: none !important;
+    }
+
+    .opcionMostrada{
+        display: flex !important;
+    }
+
+    .weather_container{
+        width: 70%;
+    }
+
+    .map_container{
+        width: 95%;
+    }
+
+    .city_country_name{
+        font-size: 2em;
+    }
+    .img_temp{
+        scale: 1.5;
+    }
+    .actual_temp_label{
+        font-size: 1.3em;
+    }
+    .actual_sensation_label{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        font-size: 1.3em;
+    }
+    .actual_temp{
+        font-size: 4em;
+    }
+    .actual_sensation{
+        font-size: 3em;
+    }
+    /* .min_max_temp_container{
+        width: 30%;
+    } */
+    .min_temp_label, .max_temp_label{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        font-size: 1.3em;
+    }
+    .min_temp, .max_temp{
+        font-size: 3em;
+    }
+    .humidity_label, .sunrise_label, .sunset_label{
+        font-size: 1.5em;
+    }
+    .sunrise, .sunset, .humidity {
+        font-size: 3em;
+    }
+}
+
+@media only screen and (max-height: 415px) and (orientation: landscape){
+    
+    .map_container{
+        width: 85%;
+    }
+}

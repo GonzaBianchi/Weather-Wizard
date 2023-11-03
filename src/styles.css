@@ -1,0 +1,90 @@
+:root {
+    --color-background: #D7EEF2; /* Fondo principal de la aplicación, puede representar un cielo despejado o un fondo general. */
+    --color-card-background: #EAF6F8; /* Fondo de las tarjetas que muestran información detallada del clima. */
+    --color-text: #2A2A2A; /* Color principal de texto, legible y adecuado para información. */
+    --color-highlight: #B0DEE5; /* Para resaltar elementos, como botones o detalles importantes. */
+    --color-divider: #FDFEFE; /* Líneas divisoras o bordes que separan secciones de la interfaz. */
+    --color-accent: #000000; /* Para elementos de alto contraste, como iconos o texto destacado. */
+    --color-scrollbarbackground: #a1a1a1;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-shadow: 0;
+    box-sizing: 0;
+    font-family: 'Quicksand', sans-serif;
+    /* color: var(--color-divider); */
+}
+
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-scrollbarbackground); /* Color de fondo de la pista de la barra de desplazamiento */
+}
+  
+::-webkit-scrollbar-thumb {
+    background: var(--color-text); /* Color del "pulgar" de la barra de desplazamiento (la parte que puedes arrastrar) */
+    border-radius: 6px; /* Bordes redondeados para el pulgar */
+}
+
+html, .body_container{
+    height: 100vh;
+    width: 100vw;
+    background-color: #333636;
+}
+
+.body_container{
+    overflow: hidden;
+}
+
+.main_content{
+    height: 100%;
+    width: 100%;
+}
+
+.main_content, .main_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-divider);
+}
+
+.actual{
+    border-bottom: 1px solid var(--color-divider);
+}
+
+@media only screen and (max-width: 768px){
+    html, .body_container{
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .main_content{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 575px) and (orientation: landscape){
+    .body_container{
+        height: 150vh;
+        overflow-y: scroll;
+    }
+    .main_content{
+        justify-content: space-around;
+    }
+}
+
+@media only screen and (max-height: 415px) and (orientation: landscape){
+    .body_container{
+        height: 210vh;
+        overflow-y: scroll;
+    }
+    .main_content{
+        justify-content: space-around;
+    }
+}
